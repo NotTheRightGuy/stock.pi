@@ -99,7 +99,7 @@ export default function handler(req, res) {
                 // console.log(lastClosingValue);
                 // console.log(symbol);
                 request.post(
-                    "http://localhost:3000/api/wordsentiment",
+                    "/api/wordsentiment",
                     { json: { text: symbol } },
                     (error, resOut, body) => {
                         if (!error && resOut.statusCode == 200) {
