@@ -25,7 +25,7 @@ export default function Dashboard() {
             body: JSON.stringify({ inputText: statement }),
         };
 
-        fetch("/api/main", requestOptions)
+        fetch("http://localhost:3000/api/main", requestOptions)
             .then((response) => response.json())
             .then((data) => {
                 setMessage((prev) => [...prev, data.msg]);

@@ -86,7 +86,6 @@ export default function handler(req, res) {
         });
     } else {
         const symbol = nameToSymbol(org);
-        console.log(symbol);
         var url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=5min&apikey=${apiKey}`;
         fetch(url)
             .then((response) => response.json())
@@ -96,10 +95,8 @@ export default function handler(req, res) {
                     value[Object.keys(value)[Object.keys(value).length - 1]];
                 let lastClosingValue = lastClosingValueArray["4. close"];
                 lastClosingValue = parseFloat(lastClosingValue);
-                // console.log(lastClosingValue);
-                // console.log(symbol);
                 request.post(
-                    "/api/wordsentiment",
+                    "http://localhost:3000/api/wordsentiment",
                     { json: { text: symbol } },
                     (error, resOut, body) => {
                         if (!error && resOut.statusCode == 200) {
@@ -135,7 +132,10 @@ export default function handler(req, res) {
                                 " was " +
                                 lastClosingValue +
                                 " and market sentiment turns out to be " +
-                                emotion;
+                                emotion +
+                                " And based on the current trend we can estimate a price of " +
+                                (lastClosingValue +
+                                    (lastClosingValue * sentimentValue) / 10);
                             res.status(200).json({
                                 msg: repsonseText,
                             });
