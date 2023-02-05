@@ -6,6 +6,8 @@
 
 A Chatbot which helps user make better decision regarding their stocks using market sentiment analysis created by team _GameChanger_ for HackInfinity 2023
 
+You can find the hosted site [here](https://stock-pi-3p68-4d2xwf8e0-nottherightguy.vercel.app/) by the courtesy of [Vercel](https://vercel.com/)
+
 ## Table of Contents
 
 -   [Installation](#installation)
@@ -63,12 +65,11 @@ localhost:3000
 
 -   Algorithm which takes input the data scrapped and predicts the future of the stock in a range
 
-    - positive review
-    - negative review
-    - neutral review
-    
--   Storing the previous searched stock's results.
+    -   positive review
+    -   negative review
+    -   neutral review
 
+-   Storing the previous searched stock's results.
 
 ## Contributors
 
@@ -80,4 +81,3 @@ localhost:3000
 ## License
 
 This code has been released under the [MIT](https://opensource.org/licenses/MIT) License.
-
