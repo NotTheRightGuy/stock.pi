@@ -54,7 +54,7 @@ const register = () => {
                 authProvider: "local",
                 email,
             });
-            window.location.href = "/home";
+            window.location.href = "/dashboard";
         } catch (err) {
             console.error(err);
             alert(err.message);
