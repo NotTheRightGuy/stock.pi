@@ -6,7 +6,7 @@
 
 A Chatbot which helps user make better decision regarding their stocks using market sentiment analysis created by team _GameChanger_ for HackInfinity 2023
 
-You can find the hosted site [here](https://stock-pi-3p68-4d2xwf8e0-nottherightguy.vercel.app/) by the courtesy of [Vercel](https://vercel.com/)
+You can find the hosted site [here](https://stock-pi.vercel.app/) by the courtesy of [Vercel](https://vercel.com/)
 
 ## Table of Contents
 
