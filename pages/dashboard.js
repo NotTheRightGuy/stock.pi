@@ -1,4 +1,4 @@
-import styles from "@/styles/Dashboard.module.css";
+import styles from "@/stylesheets/Dashboard.module.css";
 import Image from "next/image";
 import Sidebar from "./components/sidebar";
 import { useRef, useState, useEffect } from "react";

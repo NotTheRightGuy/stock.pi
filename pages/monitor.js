@@ -1,4 +1,4 @@
-import styles from "@/styles/Monitor.module.css";
+import styles from "@/stylesheets/Monitor.module.css";
 import Image from "next/image";
 import Sidebar from "./components/sidebar";
 import StockCard from "./components/stockCard";

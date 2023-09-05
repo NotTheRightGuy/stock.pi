@@ -1,4 +1,4 @@
-import styles from "@/styles/Dashboard.module.css";
+import styles from "@/stylesheets/Dashboard.module.css";
 
 export default function Sidebar() {
     return (

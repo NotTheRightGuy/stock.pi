@@ -1,4 +1,4 @@
-import styles from "@/styles/StockCard.module.css";
+import styles from "@/stylesheets/StockCard.module.css";
 export default function StockCard({
     symbol,
     identifier,

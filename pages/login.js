@@ -1,4 +1,4 @@
-import styles from "@/styles/login.module.scss";
+import styles from "@/stylesheets/login.module.scss";
 import { initializeApp } from "firebase/app";
 import {
     GoogleAuthProvider,
