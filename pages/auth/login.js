@@ -1,8 +1,90 @@
-import { auth } from "@/services/firebase";
+import { auth, googleProvider } from "@/services/firebase";
 import styles from "@/stylesheets/login.module.scss";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import Head from "next/head";
+import { useRef, useState } from "react";
+import { Oval } from "react-loader-spinner";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
+    const emailRef = useRef();
+    const passwordRef = useRef();
+
+    const [loading, setLoading] = useState(false);
+
+    const handleGoogleLogin = async () => {
+        setLoading(true);
+        await signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                toast("Logged in successfully, Redirecting...", {
+                    type: "success",
+                    position: "top-right",
+                    autoClose: 3000,
+                    onClose: () => {
+                        // window.location.href = "/";
+                    },
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    theme: "light",
+                });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                toast(errorMessage, {
+                    type: "error",
+                    position: "top-right",
+                    autoClose: 3000,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    theme: "light",
+                });
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    };
+
+    const handleLogin = async () => {
+        setLoading(true);
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+
+        await signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                toast("Logged in successfully, Redirecting...", {
+                    type: "success",
+                    position: "top-right",
+                    autoClose: 3000,
+                    onClose: () => {
+                        // window.location.href = "/";
+                    },
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    theme: "light",
+                });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                toast(errorMessage, {
+                    type: "error",
+                    position: "top-right",
+                    autoClose: 3000,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    theme: "light",
+                });
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    };
+
     return (
         <>
             <Head>
@@ -24,7 +106,10 @@ export default function Login() {
                     <div className={styles.login_hero}>
                         Sign in to <span className={styles.logo}>Stock.pi</span>
                     </div>
-                    <div className={styles.google_signin}>
+                    <div
+                        className={styles.google_signin}
+                        onClick={() => handleGoogleLogin()}
+                    >
                         <img
                             src="https://i.ibb.co/vwLK5Zx/png-transparent-google-logo-g-suite-google-guava-google-plus-company-text-logo-removebg-preview.png"
                             alt="google"
@@ -49,9 +134,13 @@ export default function Login() {
                                 marginBottom: "0.3rem",
                             }}
                         >
-                            Username or Email
+                            Email
                         </span>
-                        <input className={styles.input} type="text" />
+                        <input
+                            className={styles.input}
+                            type="text"
+                            ref={emailRef}
+                        />
                     </div>
                     <div>
                         <span
@@ -64,9 +153,32 @@ export default function Login() {
                         >
                             Password
                         </span>
-                        <input className={styles.input} type="password" />
+                        <input
+                            className={styles.input}
+                            type="password"
+                            ref={passwordRef}
+                        />
                     </div>
-                    <button className={styles.signBtn}>Sign In</button>
+                    {loading ? (
+                        <button
+                            className={styles.signBtn}
+                            style={{
+                                backgroundColor: "#efefef",
+                                cursor: "not-allowed",
+                                paddingLeft: "19%",
+                            }}
+                        >
+                            <Oval color="#000" height={20} width={20} />
+                        </button>
+                    ) : (
+                        <button
+                            className={styles.signBtn}
+                            onClick={() => handleLogin()}
+                        >
+                            Sign In
+                        </button>
+                    )}
+
                     <div
                         style={{
                             display: "flex",
@@ -92,6 +204,7 @@ export default function Login() {
                         </span>
                     </div>
                 </section>
+                <ToastContainer />
             </main>
         </>
     );
