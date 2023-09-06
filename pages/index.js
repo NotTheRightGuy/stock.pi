@@ -1,7 +1,8 @@
-import Head from "next/head";
+import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
+import Head from "next/head";
 
-export default function Home() {
+export default function Index() {
     return (
         <>
             <Head>
@@ -14,13 +15,11 @@ export default function Home() {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                <link
-                    rel="icon"
-                    href="/icon-favicon/android-chrome-192x192.png"
-                />
+                <link rel="icon" />
             </Head>
             <main>
                 <Navbar />
+                <Hero />
             </main>
         </>
     );

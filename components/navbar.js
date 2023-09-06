@@ -1,4 +1,4 @@
-import styles from "@/stylesheets/Navbar.module.scss";
+import styles from "@/stylesheets/navbar.module.scss";
 export default function Navbar() {
     return (
         <nav className={styles.nav}>
@@ -11,10 +11,18 @@ export default function Navbar() {
                 <button>Stocks</button>
             </div>
             <div className={styles.auth}>
-                <button style={{ backgroundColor: "transparent" }}>
+                <button
+                    style={{ backgroundColor: "transparent" }}
+                    onClick={() => (window.location.href = "/auth/login")}
+                >
                     Log in
                 </button>
-                <button className={styles.signup}>Sign Up</button>
+                <button
+                    className={styles.signup}
+                    onClick={() => (window.location.href = "/auth/signup")}
+                >
+                    Sign Up
+                </button>
             </div>
         </nav>
     );

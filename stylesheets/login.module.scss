@@ -1,221 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-$white: #fff;
-$google-blue: #4285f4;
-$button-active-blue: #1669f2;
+@font-face {
+    font-family: "Venus";
+    src: url("../fonts/Venus/Venus_Acier.otf");
+}
 
-.login {
-    font-family: "Roboto Slab", serif;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(
-        180deg,
-        rgba(11, 116, 176, 0.5) 0%,
-        rgba(117, 71, 156, 0.35574) 53.65%,
-        rgba(189, 56, 97, 0.5) 100%
-    );
+.login_page {
     display: flex;
-    align-items: center;
+    height: 100vh;
+}
+
+.image {
+    flex: 3;
+    background-image: url("https://media0.giphy.com/media/gRn5bzWaMsMi4/giphy.gif?cid=ecf05e47p0kncs2wuiv5zj2nh6iom7f7dibw69jhtpwda9sg&ep=v1_gifs_related&rid=giphy.gif&ct=g");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login_form {
+    flex: 5;
+    padding-left: 10vw;
+    padding-top: 20vh;
+}
+
+.login_hero {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Poppins";
+}
+
+.logo {
+    font-family: "Venus";
+}
+
+.google_signin {
+    display: flex;
+    margin-top: 3vh;
+    font-size: 0.8rem;
     justify-content: center;
-    color: black;
+    align-items: center;
+    font-family: "Poppins";
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    padding: 0.75rem 1rem;
+    color: rga(0, 0, 0, 0.8);
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    width: 41%;
+    cursor: pointer;
+    &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+}
 
-    .box {
-        width: Max(60%, 300px);
-        height: 70%;
-        opacity: 1;
-        border-radius: 10px;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-            0 10px 10px rgba(0, 0, 0, 0.22);
-        overflow: hidden;
-        background-image: url("http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSHBR8xUtvyWxWdjZ7Y-A0lOrHSBOwF6Z-lCt9w6P5I0MuIThLK2baLWX5Cqp3DNBJ8");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+.google_logo {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
 
-        h1 {
-            font-family: "Roboto Slab", serif;
-            font-weight: bold;
-            font-size: 3rem;
-        }
+.divider {
+    height: 1px;
+    width: 45%;
+    margin-top: 1vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
-        p {
-            font-size: 14px;
-            font-weight: 100;
-            line-height: 20px;
-            letter-spacing: 0.5px;
-            margin: 20px 0 30px;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+.signInWithEmailCont {
+    margin-top: 3vh;
+    display: flex;
+    align-items: start;
+    gap: 1vw;
+    width: 41%;
+}
 
-        p:hover{
-            cursor: pointer;
-            font-size: 15px;
+.signinwithemail {
+    width: 50%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: "Poppins";
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
 
-        }
+.login_inputs {
+    margin-top: 5vh;
+}
 
-        span {
-            font-size: 14px;
-            margin-bottom: 2rem;
-        }
+.input {
+    width: 41%;
+    height: 5.5vh;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 
-        a {
-            color: #333;
-            font-size: 14px;
-            text-decoration: none;
-            margin: 15px 0;
-        }
+    padding-left: 0.5vw;
+    font-family: "Poppins";
+    font-size: 0.9rem;
 
-        button {
-            border-radius: 20px;
-            border: 1px solid #ff4b2b;
-            background-color: #ff4b2b;
-            color: #ffffff;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 12px 45px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: transform 80ms ease-in;
-            margin-top: 10px;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+    margin-bottom: 2vh;
 
-        button:hover{
-            cursor: pointer;
-            transform: scale(1.1);
-        }
+    &:focus {
+        outline: 2px solid rgba(0, 0, 0, 0.2);
+        border: none;
+    }
 
-        button:active {
-            transform: scale(0.95);
-        }
+    &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+}
 
-        button:focus {
-            outline: none;
-        }
+.signBtn {
+    margin-top: 4vh;
+    width: 41%;
+    height: 6.5vh;
+    border: none;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-family: "Poppins";
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 
-        button.ghost {
-            background-color: transparent;
-            border-color: #ffffff;
-        }
-
-        form {
-            background-color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 0 50px;
-            height: 100%;
-            text-align: center;
-        }
-
-        input {
-            font-family: "Roboto Slab", serif;
-            background-color: transparent;
-            border: 1px solid black;
-            padding: 12px 15px;
-            margin: 8px 0;
-            width: Min(100%, 300px);
-        }
-
-        .left {
-            background-color: white;
-            // background-color: rgba(41, 39, 39, 0.3);
-            width: Max(50%, 300px);
-            height: 100%;
-            flex: 1;
-            // position: absolute;
-
-            .googleBtn {
-                cursor: pointer;
-                margin-top: 1rem;
-                width: Min(100%, 300px);
-                height: 42px;
-                margin-bottom: 10px;
-                background-color: $google-blue;
-                border-radius: 2px;
-                box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
-                .googleIconWrapper {
-                    position: absolute;
-                    margin-top: 1px;
-                    margin-left: 1px;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 2px;
-                    background-color: $white;
-                }
-                .googleIcon {
-                    // position: absolute;
-                    margin-top: 11px;
-                    // margin-left: 11px;
-                    width: 18px;
-                    height: 18px;
-                }
-                .btnText {
-                    position: relative;
-                    // margin: 11px 11px 0 0;
-                    margin: 11px 0;
-                    margin-left: 30px;
-                    color: $white;
-                    font-size: 14px;
-                    font-weight: 300;
-                    letter-spacing: 0.2px;
-                    font-family: "Poppins";
-                }
-                &:hover {
-                    box-shadow: 0 0 6px $google-blue;
-                }
-                &:active {
-                    background: $button-active-blue;
-                }
-            }
-
-            form {
-                justify-content: center;
-                // position: absolute;
-                top: 0;
-                height: 100%;
-                transition: all 0.6s ease-in-out;
-
-                .social-container {
-                    margin: 20px 0;
-                }
-
-                .social-container a {
-                    border: 1px solid #dddddd;
-                    border-radius: 50%;
-                    display: inline-flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0 5px;
-                    height: 40px;
-                    width: 40px;
-                }
-
-                .registerLinkText {
-                    font-size: 14px;
-                    transform: translate(0, 10px);
-                    .registerLink {
-                        color: #ff4b2b;
-                        text-decoration: underline;
-                        cursor: pointer;
-                    }
-                }
-            }
-
-            h1 {
-                margin: 0;
-                text-align: center;
-                // padding-top: 10px;
-                margin-bottom: 20px;
-            }
-        }
-
-        .right {
-            height: 100%;
-            position: relative;
-
-            width: clamp(300px, 60%, 60%) !important;
-        }
+    &:hover {
+        background-color: #202020;
     }
 }
