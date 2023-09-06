@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+.mainContainer {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 4rem 3fr;
+}
+
+.leftContainer {
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.rightContainer {
+    position: relative;
+    /* background-color: green; */
+    display: grid;
+    grid-template-rows: 4rem 1fr;
+}
+
+.topContainer {
+    height: 4rem;
+    width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border: 1px solid rgb(151, 151, 151);
+    border-left: 0;
+    display: flex;
+    align-items: center;
+    /* background-color: yellow; */
+}
+
+.bottomContainer {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    height: 5rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    /* background-color: pink; */
+    display: flex;
+}
+
+.inputContainer {
+    text-align: center;
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    flex: 3;
+    /* background-color: azure; */
+    align-items: center;
+}
+
+.sendBtnContainer {
+    flex: 1;
+    height: 4rem;
+    width: 100%;
+    /* background-color: blueviolet; */
+}
+
+.input {
+    color: black;
+    font-family: "Roboto Slab", serif;
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: transparent;
+    width: 80%;
+    height: 3rem;
+    margin: 8px;
+    margin-top: 20px;
+    border-radius: 1rem;
+    border: 1px rgba(0, 0, 0, 0.5) solid;
+    outline: 0;
+}
+
+.input::placeholder {
+    font-family: "Roboto Slab", serif;
+    font-size: 1rem;
+}
+
+.inputContainer button {
+    background-color: transparent;
+    border: none;
+    margin-top: 20px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.inputContainer button:hover {
+    transform: rotate(-90deg);
+    cursor: pointer;
+}
+
+.messageIcon {
+    margin: 10px;
+    margin-left: 40px;
+    height: 40px;
+}
+
+.leftContainer button {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.leftContainer button img {
+    width: 35px;
+    opacity: 0.7;
+}
+
+.leftContainer button:hover {
+    cursor: pointer;
+    padding: 0.3rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+}
+
+.middleContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.messageTextLogo {
+    color: black;
+    font-family: "Roboto Slab", serif;
+    font-size: 2rem;
+}
+
+.messageText {
+    padding: 1rem;
+    border: 1px solid black;
+    color: black;
+    font-family: "Roboto Slab", serif;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
