@@ -29,6 +29,9 @@ export default function Login() {
                     pauseOnHover: true,
                     theme: "light",
                 });
+                setTimeout(() => {
+                    window.location.href = "/session/dashboard";
+                }, 2000);
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -67,6 +70,9 @@ export default function Login() {
                     pauseOnHover: true,
                     theme: "light",
                 });
+                setTimeout(() => {
+                    window.location.href = "/session/dashboard";
+                }, 2000);
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -104,7 +110,16 @@ export default function Login() {
                 <section className={styles.image}></section>
                 <section className={styles.login_form}>
                     <div className={styles.login_hero}>
-                        Sign in to <span className={styles.logo}>Stock.pi</span>
+                        Sign in to{" "}
+                        <span
+                            className={styles.logo}
+                            onClick={() => {
+                                window.location.href = "/";
+                            }}
+                            style={{ cursor: "pointer" }}
+                        >
+                            Stock.pi
+                        </span>
                     </div>
                     <div
                         className={styles.google_signin}

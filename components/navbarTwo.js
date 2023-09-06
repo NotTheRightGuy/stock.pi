@@ -1,11 +1,9 @@
 import { auth } from "@/services/firebase";
-import styles from "@/stylesheets/navbar.module.scss";
+import styles from "@/stylesheets/navbarTwo.module.scss";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useState } from "react";
-import Logo from "./logo";
-export default function Navbar() {
+export default function NavbarTwo() {
     const [user, setUser] = useState(null);
-
     onAuthStateChanged(auth, (user) => {
         if (user) {
             setUser(user);
@@ -15,22 +13,34 @@ export default function Navbar() {
     });
     return (
         <nav className={styles.nav}>
-            <Logo />
-            <div className={styles.links}>
-                <button>Home</button>
-                <button>About</button>
-                <button>Stocks</button>
+            <div
+                className={styles.logo}
+                onClick={() => (window.location.href = "/")}
+            >
+                Stock<span className={styles.pi}>.pi</span>
             </div>
+            <div className={styles.links}></div>
             <div className={styles.auth}>
                 {user ? (
                     <>
-                        <span
-                            onClick={() =>
-                                (window.location.href = "/session/dashboard")
-                            }
+                        <img
+                            src="https://www.pngkey.com/png/full/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png"
+                            alt="user profile picture"
+                            style={{
+                                width: "2rem",
+                                height: "2rem",
+                            }}
+                        />
+                        <p
+                            style={{
+                                fontFamily: "Poppins",
+                                fontWeight: "500",
+                                fontSize: "0.8rem",
+                                marginTop: "0.4rem",
+                            }}
                         >
-                            Dashboard
-                        </span>
+                            {user.displayName}
+                        </p>
                         <button
                             className={styles.signout}
                             onClick={() => signOut(auth)}

@@ -35,6 +35,9 @@ export default function Signup() {
                     pauseOnHover: true,
                     theme: "light",
                 });
+                setTimeout(() => {
+                    window.location.href = "/session/dashboard";
+                }, 2000);
             })
             .catch((error) => {
                 // console.log(error.message);
@@ -76,6 +79,9 @@ export default function Signup() {
                     pauseOnHover: true,
                     theme: "light",
                 });
+                setTimeout(() => {
+                    window.location.href = "/session/dashboard";
+                }, 2000);
             })
             .catch((error) => {
                 if (
@@ -127,7 +133,16 @@ export default function Signup() {
                 <section className={styles.image}></section>
                 <section className={styles.signup_form}>
                     <div className={styles.signup_hero}>
-                        Sign up to <span className={styles.logo}>Stock.pi</span>
+                        Sign up to{" "}
+                        <span
+                            className={styles.logo}
+                            onClick={() => {
+                                window.location.href = "/";
+                            }}
+                            style={{ cursor: "pointer" }}
+                        >
+                            Stock.pi
+                        </span>
                     </div>
                     <div
                         className={styles.google_signup}

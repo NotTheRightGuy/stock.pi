@@ -1,4 +1,6 @@
+import HeroImage from "@/assets/hero-image.png";
 import styles from "@/stylesheets/hero.module.scss";
+import Image from "next/image";
 export default function Hero() {
     return (
         <main className={styles.hero}>
@@ -15,7 +17,16 @@ export default function Hero() {
                 </div>
                 <div className={styles.startedBtn}>Let's get you started</div>
             </section>
-            <section></section>
+            <section
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100vh",
+                }}
+            >
+                <Image src={HeroImage} width={500} height={500} />
+            </section>
         </main>
     );
 }
