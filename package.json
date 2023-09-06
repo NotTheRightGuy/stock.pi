@@ -26,5 +26,8 @@
     "sentiment": "^5.0.2",
     "spelling-corrector": "^3.0.0",
     "stopword": "^2.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0"
   }
 }
