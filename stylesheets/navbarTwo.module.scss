@@ -9,6 +9,10 @@
     display: flex;
     justify-content: space-between;
     padding: 1vh 2vw;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    background-color: white;
 }
 
 .logo {

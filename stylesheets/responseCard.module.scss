@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@font-face {
+    font-family: "Venus";
+    src: url("../fonts/Venus/Venus_Acier.otf");
+}
+
+.container {
+    max-width: 40vw;
+    min-height: 70vh;
+    border-radius: 10px;
+    padding: 20px;
+    border: 3px solid #1f1f1f;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.rowFirst {
+    display: flex;
+    justify-content: space-between;
+}
+
+.companyName {
+    font-family: "Venus";
+    font-size: 2rem;
+    color: #1f1f1f;
+    font-weight: bold;
+}
+
+.companyTicker {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    color: #1f1f1f;
+}
+
+.sentimentLabel {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: #1f1f1f;
+}
+
+.sentimentScore {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+.rowSecond {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.helperText {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.7rem;
+    color: #1f1f1f;
+    margin-top: 10px;
+    width: 80%;
+    opacity: 0.8;
+}
+
+.newsHeader {
+    font-family: "Poppins", sans-serif;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #1f1f1f4a;
+}
+
+.newsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.newsCard {
+    margin-top: 1rem;
+    border-radius: 10px;
+    height: 23vh;
+    padding: 10px;
+    border: 2px solid #1f1f1f;
+
+    .newsCardTitle {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.6rem;
+        padding: 3px;
+        height: 6.5vh;
+        overflow: hidden;
+    }
+
+    .newsCardBanner {
+        height: 11vh;
+        border-radius: 8px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #1f1f1f;
+        }
+    }
+
+    button {
+        font-family: "Poppins";
+        font-size: 0.5rem;
+        width: 100%;
+        border-radius: 50px;
+        background-color: #1f1f1f;
+        color: white;
+        padding: 3px;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #2d2d2d;
+        }
+    }
+}
