@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
 import Head from "next/head";
+import AboutUs from "@/components/aboutUs";
 
 export default function Index() {
     return (
@@ -18,8 +19,9 @@ export default function Index() {
                 <link rel="icon" />
             </Head>
             <main>
-                <Navbar />
-                <Hero />
+                <Navbar/>
+                <Hero/>
+                <AboutUs/>
             </main>
         </>
     );
