@@ -8,7 +8,7 @@ export default function Sidebar() {
             <Logo light />
             <div>
                 <SidebarBtn icon="🏠" text="Chat" />
-                <SidebarBtn icon="💬" text="Previous Chats" />
+                <SidebarBtn icon="💬" text="Previous Chat" />
                 <SidebarBtn icon="⭐" text="Starred" />
                 <SidebarBtn icon="💸" text="Stocks" />
             </div>

@@ -1,11 +1,15 @@
 "use client";
 import styles from "@/stylesheets/chatContainer.module.scss";
+import { getFromDB, saveToDB } from "@/utils/dbFuntions";
 import extractCompanyName from "@/utils/extractOrg";
 import getTicker from "@/utils/symbolFromOrg";
 import { useEffect, useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 import getSentiment from "@/utils/getSentiment";
 import ResponseCard from "./responseCard";
+
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ChatContainer() {
     const [messages, setMessages] = useState([]);
@@ -60,7 +64,10 @@ export default function ChatContainer() {
         }
     };
 
-    const saveMessages = (messages) => {};
+    const saveMessages = async () => {
+        await saveToDB(messages);
+        toast.success("Messages saved!");
+    };
 
     const getResponseCard = async (orgTicker, orgName) => {
         const res = await getSentiment(orgTicker);
@@ -81,6 +88,7 @@ export default function ChatContainer() {
 
     return (
         <div className={styles.mainContainer}>
+            <ToastContainer />
             <section className={styles.container}>
                 {messages.map((message, index) => {
                     if (message.user === "bot") {
@@ -117,7 +125,7 @@ export default function ChatContainer() {
                 >
                     Send
                 </button>
-                <button onClick={() => saveMessages(messages)}>Save</button>
+                <button onClick={() => saveMessages()}>Save</button>
             </div>
         </div>
     );
