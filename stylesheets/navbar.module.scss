@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @font-face {
     font-family: "Venus";
     src: url("../fonts/Venus/Venus_Acier.otf");
@@ -26,7 +25,7 @@
         outline: none;
         background-color: transparent;
         cursor: pointer;
-        font-family: "Poppins";
+        font-family: "Inter", sans-serif;
         transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 
         &:hover {
@@ -41,12 +40,12 @@
     button {
         border: none;
         outline: none;
-        font-family: "Poppins";
+        font-family: "Inter", sans-serif;
         cursor: pointer;
     }
 
     span {
-        font-family: "Poppins";
+        font-family: "Inter", sans-serif;
         margin-top: 1vh;
         font-size: 0.8rem;
         cursor: pointer;

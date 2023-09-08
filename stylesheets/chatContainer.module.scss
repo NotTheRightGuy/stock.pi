@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .mainContainer {
     width: 100vw;
     padding-top: 50px;
@@ -20,7 +19,7 @@
         margin-left: 8vw;
         padding-left: 10px;
         font-size: 0.8rem;
-        font-family: "Poppins", sans-serif;
+        font-family: "Inter", sans-serif;
         outline: none;
         border: none;
         border: 1px solid #1f1f1f8a;
@@ -51,7 +50,7 @@
         border: none;
         outline: none;
 
-        font-family: "Poppins", sans-serif;
+        font-family: "Inter", sans-serif;
 
         cursor: pointer;
 
@@ -83,7 +82,7 @@
     align-self: flex-end;
     max-width: 50vw;
     position: relative;
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.8rem;
     &::before {
         content: "";
@@ -119,7 +118,7 @@
     width: fit-content;
     max-width: 50vw;
     position: relative;
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.8rem;
     &::before {
         content: "";

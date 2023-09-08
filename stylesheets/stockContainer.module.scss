@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+
+.stockContainer {
+    height: 100vh;
+    width: 100vw;
+    padding-left: 20vw;
+    padding-top: 8vh;
+    padding-right: 10vw;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: "Inter", sans-serif;
+        margin-bottom: 2rem;
+    }
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    h1 {
+        font-size: 2rem;
+        width: fit-content;
+        font-weight: bold;
+        font-family: "Inter", sans-serif;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        border-bottom: 4px solid #000000be;
+    }
+
+    p {
+        margin-top: 3vh;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: "Inter", sans-serif;
+    }
+    span {
+        font-size: 0.8rem;
+        font-family: "Inter", sans-serif;
+    }
+}
+
+.cardShelf {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}

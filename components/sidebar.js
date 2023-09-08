@@ -21,8 +21,14 @@ export default function Sidebar() {
                         window.location.href = "/session/previousChat";
                     }}
                 />
+                <SidebarBtn
+                    icon="💸"
+                    text="Stocks"
+                    onClick={() => {
+                        window.location.href = "/session/stocks";
+                    }}
+                />
                 <SidebarBtn icon="⭐" text="Starred" />
-                <SidebarBtn icon="💸" text="Stocks" />
             </div>
             <div></div>
         </div>

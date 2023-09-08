@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @font-face {
     font-family: "Venus";
     src: url("../fonts/Venus/Venus_Acier.otf");
@@ -29,19 +28,19 @@
 }
 
 .companyTicker {
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1.2rem;
     color: #1f1f1f;
 }
 
 .sentimentLabel {
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1rem;
     color: #1f1f1f;
 }
 
 .sentimentScore {
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1rem;
     padding: 5px;
     border-radius: 50%;
@@ -55,7 +54,7 @@
 }
 
 .helperText {
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.7rem;
     color: #1f1f1f;
     margin-top: 10px;
@@ -64,7 +63,7 @@
 }
 
 .newsHeader {
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     margin-top: 1rem;
     font-size: 1.2rem;
     border-bottom: 2px solid #1f1f1f4a;
@@ -84,7 +83,7 @@
     border: 2px solid #1f1f1f;
 
     .newsCardTitle {
-        font-family: "Poppins", sans-serif;
+        font-family: "Inter", sans-serif;
         font-size: 0.6rem;
         padding: 3px;
         height: 6.5vh;
@@ -105,7 +104,7 @@
     }
 
     button {
-        font-family: "Poppins";
+        font-family: "Inter", sans-serif;
         font-size: 0.5rem;
         width: 100%;
         border-radius: 50px;

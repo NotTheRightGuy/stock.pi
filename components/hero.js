@@ -15,7 +15,14 @@ export default function Hero() {
                     market chatter, news, and social media to offer you a
                     comprehensive sentiment analysis.{" "}
                 </div>
-                <div className={styles.startedBtn}>Let's get you started</div>
+                <div
+                    className={styles.startedBtn}
+                    onClick={() => {
+                        window.location.href = "/auth/login";
+                    }}
+                >
+                    Let's get you started
+                </div>
             </section>
             <section
                 style={{
@@ -25,7 +32,12 @@ export default function Hero() {
                     height: "100vh",
                 }}
             >
-                <Image src={HeroImage} width={500} height={500} />
+                <Image
+                    src={HeroImage}
+                    width={500}
+                    height={500}
+                    alt="Hero Image"
+                />
             </section>
         </main>
     );
