@@ -19,10 +19,12 @@ export async function saveToDB(messages) {
 export async function getFromDB() {
     const userEmail = await getUserEmail();
     const docRef = doc(db, "prevMessages", userEmail);
+
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
         const messages = docSnap.data();
+        if (!messages.messages) return [];
         const messagesArray = JSON.parse(messages.messages);
         return messagesArray;
     } else {

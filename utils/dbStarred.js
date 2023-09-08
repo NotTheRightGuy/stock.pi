@@ -5,6 +5,7 @@ import {
     arrayUnion,
     doc,
     getDoc,
+    setDoc,
     updateDoc,
 } from "firebase/firestore";
 
@@ -15,14 +16,22 @@ export async function getUserEmail() {
 export async function addStockToDB({ stock }) {
     const email = await getUserEmail();
     const docRef = doc(db, "starredStocks", email);
-    await updateDoc(docRef, {
-        stocks: arrayUnion(stock),
-    });
+    if (!docRef) {
+        // Create a document in the starredStocks collection with the ID being the user's email and the data being the stock
+        await setDoc(docRef, {
+            stocks: [stock],
+        });
+    } else {
+        await updateDoc(docRef, {
+            stocks: arrayUnion(stock),
+        });
+    }
 }
 
 export async function getStocksFromDB() {
     const email = await getUserEmail();
     const docRef = doc(db, "starredStocks", email);
+
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {

@@ -21,19 +21,20 @@ export default function StarredContainer() {
                 <h1>Starred Stocks ⭐</h1>
             </div>
             <div className={styles.cardShelf}>
-                {starred.map((stock) => {
-                    return (
-                        <StockCard
-                            key={Math.random()}
-                            ticker={stock.ticker}
-                            price={stock.price}
-                            changeAmount={stock.changeAmount}
-                            changePercentage={stock.changePercentage}
-                            volumeTraded={stock.volumeTraded}
-                            starred={true}
-                        />
-                    );
-                })}
+                {starred &&
+                    starred.map((stock) => {
+                        return (
+                            <StockCard
+                                key={Math.random()}
+                                ticker={stock.ticker}
+                                price={stock.price}
+                                changeAmount={stock.changeAmount}
+                                changePercentage={stock.changePercentage}
+                                volumeTraded={stock.volumeTraded}
+                                starred={true}
+                            />
+                        );
+                    })}
             </div>
         </section>
     );
