@@ -1,13 +1,13 @@
 import MustBeLoggedIn from "@/components/mustLoggedIn";
 import NavbarTwo from "@/components/navbarTwo";
 import Sidebar from "@/components/sidebar";
-import StockContainer from "@/components/stockContainer";
+import StarredContainer from "@/components/starredContainer";
 import { auth } from "@/services/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import Head from "next/head";
 import { useState } from "react";
 
-export default function Stocks() {
+export default function Starred() {
     const [user, setUser] = useState(null);
     onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -20,7 +20,7 @@ export default function Stocks() {
     return (
         <>
             <Head>
-                <title>Stock.pi | Stocks</title>
+                <title>Stock.pi | Starred</title>
                 <meta
                     name="description"
                     content="Simplify your stock analysis with Stock.PI."
@@ -35,7 +35,7 @@ export default function Stocks() {
             {user ? (
                 <div>
                     <NavbarTwo />
-                    <StockContainer />
+                    <StarredContainer />
                     <Sidebar />
                 </div>
             ) : (

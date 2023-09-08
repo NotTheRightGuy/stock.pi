@@ -1,7 +1,7 @@
 import styles from "@/stylesheets/stockCard.module.scss";
 import { addStockToDB, removeStocksFromDB } from "@/utils/dbStarred";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function StockCard({
     ticker,
@@ -9,10 +9,20 @@ export default function StockCard({
     changeAmount,
     changePercentage,
     volumeTraded,
+    starred,
 }) {
     const [isFavorite, setIsFavorite] = useState(false);
+    const [isStarred, setIsStarred] = useState(false);
+
+    useEffect(() => {
+        if (starred) {
+            setIsFavorite(starred);
+            setIsStarred(starred);
+        }
+    }, []);
 
     const handleStarClick = () => {
+        console.log("Star clicked");
         if (isFavorite) {
             removeStocksFromDB({
                 stock: {
@@ -24,6 +34,7 @@ export default function StockCard({
                 },
             });
             setIsFavorite(false);
+            setIsStarred(false);
         } else {
             addStockToDB({
                 stock: {
@@ -35,6 +46,7 @@ export default function StockCard({
                 },
             });
             setIsFavorite(true);
+            setIsStarred(true);
         }
     };
 
@@ -49,7 +61,7 @@ export default function StockCard({
             <main className={styles.cardContainer}>
                 <div className={styles.cardHeader}>
                     <span>{ticker}</span>
-                    {isFavorite ? (
+                    {isFavorite || isStarred ? (
                         <span
                             className="fa fa-star"
                             style={{ color: "gold", cursor: "pointer" }}
