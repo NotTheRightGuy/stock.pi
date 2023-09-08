@@ -22,6 +22,22 @@ export default function ChatContainer() {
                 handleInput();
             }
         };
+
+        setMessages((messages) => [
+            ...messages,
+            {
+                user: "bot",
+                text: "Hi! I'm Stock.PI, your personal stock analysis assistant. I can help you find the latest news and sentiment analysis for any publicly traded company. Try asking me about a company!",
+            },
+        ]);
+        setMessages((messages) => [
+            ...messages,
+            {
+                user: "bot",
+                text: "You can simply type in the name of the company, or you can ask me a question like 'What is the sentiment for Apple?'",
+            },
+        ]);
+
         inputRef.current.addEventListener("keyup", handleKeyUp);
         return () => {
             if (inputRef.current)

@@ -2,7 +2,7 @@ const stocks = {
     "Exxon Mobil Corporation": "XOM",
     "General Electric Company": "GE",
     "Microsoft Corporation": "MSFT",
-    "BP p.l.c.": "BP",
+    "Apple Computer, Inc.": "AAPL",
     "Citigroup, Inc.": "C",
     "Procter & Gamble Company (The)": "PG",
     "Wal-Mart Stores, Inc.": "WMT",

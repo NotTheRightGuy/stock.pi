@@ -1,28 +1,24 @@
 import db from "@/services/db";
 import { auth } from "@/services/firebase";
-import { collection, doc, getDoc, setDoc } from "firebase/firestore";
-
-const prevMessagesRef = collection(db, "prevMessages");
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 export async function getUserEmail() {
     return auth.currentUser.email;
 }
 
 export async function saveToDB(messages) {
-    console.log(messages);
-    messages = JSON.stringify(messages);
-    const res = await setDoc(doc(prevMessagesRef, getUserEmail()), {
-        date: new Date(),
-        messages: messages,
+    const userEmail = await getUserEmail();
+    const messagesString = JSON.stringify(messages);
+    const docRef = doc(db, "prevMessages", userEmail);
+    await setDoc(docRef, {
+        date: new Date().toLocaleString(),
+        messages: messagesString,
     });
-    if (res) {
-        return true;
-    }
-    return false;
 }
 
-export async function getFromDB(email) {
-    const docRef = doc(db, "prevMessages", email);
+export async function getFromDB() {
+    const userEmail = await getUserEmail();
+    const docRef = doc(db, "prevMessages", userEmail);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {

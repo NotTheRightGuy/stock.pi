@@ -21,7 +21,7 @@ export default function PreviousChat() {
 
     useEffect(() => {
         if (user) {
-            getFromDB(user.email).then((res) => {
+            getFromDB().then((res) => {
                 if (res) {
                     setHistory(res);
                 }

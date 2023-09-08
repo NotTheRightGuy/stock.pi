@@ -30,14 +30,13 @@ export default function PrevChatContainer({ history }) {
     }, []);
 
     useEffect(() => {
-        history.forEach((message) => {
-            console.log(message);
-        });
+        if (history) {
+            setMessages(history);
+        }
     }, [history]);
 
     useEffect(() => {
         chatEnd.current.scrollIntoView({ behavior: "smooth" });
-        console.log("Messages : ", messages);
     }, [messages]);
 
     const handleInput = async () => {
@@ -99,22 +98,33 @@ export default function PrevChatContainer({ history }) {
             <ToastContainer />
             <section className={styles.container}>
                 {messages.map((message, index) => {
-                    if (message.user === "bot") {
+                    if (message.user === "user") {
+                        return (
+                            <div key={index} className={styles.userMessage}>
+                                {message.text}
+                            </div>
+                        );
+                    } else if (message.user === "bot") {
                         return (
                             <div key={index} className={styles.otherMessage}>
                                 {message.text}
                             </div>
                         );
                     } else if (message.user === "resCard") {
-                        return message.text;
-                    } else {
+                        // Create a response card using message.text
                         return (
-                            <div
-                                key={Math.random()}
-                                className={styles.userMessage}
-                            >
-                                {message.text}
-                            </div>
+                            <ResponseCard
+                                key={message.text.key}
+                                orgName={message.text.props.orgName}
+                                orgTicker={message.text.props.orgTicker}
+                                sentimentScore={
+                                    message.text.props.sentimentScore
+                                }
+                                sentimentLabel={
+                                    message.text.props.sentimentLabel
+                                }
+                                articles_link={message.text.props.articles_link}
+                            />
                         );
                     }
                 })}
