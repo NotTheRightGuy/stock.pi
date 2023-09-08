@@ -16,14 +16,13 @@ export async function getUserEmail() {
 export async function addStockToDB({ stock }) {
     const email = await getUserEmail();
     const docRef = doc(db, "starredStocks", email);
-    if (!docRef) {
-        // Create a document in the starredStocks collection with the ID being the user's email and the data being the stock
-        await setDoc(docRef, {
-            stocks: [stock],
-        });
-    } else {
+    try {
         await updateDoc(docRef, {
             stocks: arrayUnion(stock),
+        });
+    } catch (e) {
+        await setDoc(docRef, {
+            stocks: [stock],
         });
     }
 }
