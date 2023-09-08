@@ -7,8 +7,20 @@ export default function Sidebar() {
         <div className={styles.sidebar}>
             <Logo light />
             <div>
-                <SidebarBtn icon="🏠" text="Chat" />
-                <SidebarBtn icon="💬" text="Previous Chat" />
+                <SidebarBtn
+                    icon="🏠"
+                    text="Chat"
+                    onClick={() => {
+                        window.location.href = "/session/dashboard";
+                    }}
+                />
+                <SidebarBtn
+                    icon="💬"
+                    text="Previous Chat"
+                    onClick={() => {
+                        window.location.href = "/session/previousChat";
+                    }}
+                />
                 <SidebarBtn icon="⭐" text="Starred" />
                 <SidebarBtn icon="💸" text="Stocks" />
             </div>

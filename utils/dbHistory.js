@@ -1,14 +1,15 @@
 import db from "@/services/db";
 import { auth } from "@/services/firebase";
-import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
+import { collection, doc, getDoc, setDoc } from "firebase/firestore";
 
 const prevMessagesRef = collection(db, "prevMessages");
 
-export function getUserEmail() {
+export async function getUserEmail() {
     return auth.currentUser.email;
 }
 
 export async function saveToDB(messages) {
+    console.log(messages);
     messages = JSON.stringify(messages);
     const res = await setDoc(doc(prevMessagesRef, getUserEmail()), {
         date: new Date(),
@@ -20,12 +21,14 @@ export async function saveToDB(messages) {
     return false;
 }
 
-export async function getFromDB() {
-    const docRef = doc(db, "prevMessages", getUserEmail());
+export async function getFromDB(email) {
+    const docRef = doc(db, "prevMessages", email);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
+        const messages = docSnap.data();
+        const messagesArray = JSON.parse(messages.messages);
+        return messagesArray;
     } else {
         console.log("No such document!");
     }

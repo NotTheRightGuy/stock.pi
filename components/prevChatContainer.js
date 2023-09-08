@@ -1,6 +1,6 @@
 "use client";
 import styles from "@/stylesheets/chatContainer.module.scss";
-import { getFromDB, saveToDB } from "@/utils/dbHistory";
+import { saveToDB } from "@/utils/dbHistory";
 import extractCompanyName from "@/utils/extractOrg";
 import getTicker from "@/utils/symbolFromOrg";
 import { useEffect, useRef, useState } from "react";
@@ -11,7 +11,7 @@ import ResponseCard from "./responseCard";
 
 import "react-toastify/dist/ReactToastify.css";
 
-export default function ChatContainer() {
+export default function PrevChatContainer({ history }) {
     const [messages, setMessages] = useState([]);
     const inputRef = useRef(null);
     const chatEnd = useRef(null);
@@ -30,7 +30,14 @@ export default function ChatContainer() {
     }, []);
 
     useEffect(() => {
+        history.forEach((message) => {
+            console.log(message);
+        });
+    }, [history]);
+
+    useEffect(() => {
         chatEnd.current.scrollIntoView({ behavior: "smooth" });
+        console.log("Messages : ", messages);
     }, [messages]);
 
     const handleInput = async () => {
@@ -111,6 +118,7 @@ export default function ChatContainer() {
                         );
                     }
                 })}
+
                 <div ref={chatEnd}></div>
             </section>
             <div className={styles.inputContainer}>
