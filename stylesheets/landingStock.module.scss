@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@font-face {
+    font-family: "Venus";
+    src: url("../fonts/Venus/Venus_Acier.otf");
+}
+
+.shape {
+    height: 20px;
+    width: 20px;
+    background-color: rgba(42, 255, 99, 0.899);
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+.landingStock {
+    min-height: 100vh;
+    padding-left: 5rem;
+
+    h1 {
+        font-family: "Venus";
+        font-weight: bold;
+        width: 60%;
+        font-size: 3rem;
+    }
+}
+
+.subText {
+    margin-top: 3rem;
+    width: 70%;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.stockContainer {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
