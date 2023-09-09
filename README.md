@@ -1,118 +1,126 @@
 # Stock.Pi
 
-![Stock.pi Logo](/public/logo.png)
-
-Welcome to Stock.pi, your trusted partner in stock market analysis and prediction! At Stock.pi, we understand the complexities and uncertainties of the stock market. That's why we've created a cutting-edge chatbot-powered Market Sentiment Analysis Tool to help you make well-informed decisions when it comes to your investments.
+![](/public/stockpi.png)
+Welcome to Stock.pi, your trusted partner in stock market analysis! At Stock.pi, we understand the complexities and uncertainties of the stock market. That's why we've created a cutting-edge chatbot-powered Market Sentiment Analysis Tool to help you make well-informed decisions when it comes to your investments.
 
 With Stock.pi, you have a powerful ally at your fingertips. Our chatbot leverages advanced sentiment analysis techniques to provide you with valuable insights into market trends, sentiment, and predictions.
 
 Explore Stock.pi's intuitive chatbot and gain a competitive edge in the stock market. Start predicting and analyzing stock market trends with confidence. Your financial success is just a conversation away!
 
-
 ### Table of Contents
 
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [Features](#Features)
-* [Contributing](#Contributing)
-* [License](#License)
+-   [Deployment](#Deployment)
+-   [Installation](#Installation)
+-   [Usage](#Usage)
+-   [Features](#Features)
+-   [Contributing](#Contributing)
+-   [License](#License)
 
+### Deployment
+
+Stock.pi is deployed on [Vercel](https://vercel.com/). You can access the deployed version of the app [here](https://stock-pi-nottherightguy.vercel.app).
 
 ### Installation
 
-To get started with the **HackInfinity** project, follow these simple installation steps:
+To get started with the **Stock.pi** project, follow these simple installation steps:
 
 1. Clone the Git repository to your local machine using the following command:
 
-   ```bash
-   git clone https://github.com/Dv04/HackInfinity.git && cd HackInfinity
+    ```bash
+    git clone https://github.com/NotTheRightGuy/stock.pi && cd stock.pi
     ```
+
 2. Install dependencies using the following command:
 
-   ```bash
-   npm install
-   ```
-
-
+    ```bash
+    npm install
+    ```
 
 ### Usage
 
 1. Run the server using the following command:
 
-   ```bash
-   npm run dev
-   ```
+    ```bash
+    npm run dev
+    ```
+
 2. Navigate to localhost:3000 (type the following in your browser)
 
-   ```bash
-   localhost:3000
-   ```
-host:3000
-
+    ```bash
+    localhost:3000
+    ```
 
 ### Tech Stack
 
-- React: - [React](https://reactjs.org/) 
-- Node: - [Node](https://nodejs.org/en/)
-- Next.js: - [Next.js](https://nextjs.org/)
-- Natural: - [Natural](https://www.npmjs.com/package/natural)
-- apos-to-lex-form: - [apos-to-lex-form](https://www.npmjs.com/package/apostrophe)
-- axios: - [axios](https://www.npmjs.com/package/axios)
-- Spell Corrector: - [Spell Corrector](https://www.npmjs.com/package/spell-corrector)
-- News API: - [News API](https://newsapi.org/)
-  
+-   [React](https://reactjs.org/)
+-   [Next.js](https://nextjs.org/)
+-   [Node](https://nodejs.org/en/)
+-   [Firebase](https://firebase.google.com/)
+-   [Sass](https://sass-lang.com/)
 
-### StockPi Features
+### API Reference
+
+-   [Alpha Vantage](https://www.alphavantage.co/) provides free APIs for realtime and historical data on stocks, forex (FX), and digital/crypto currencies. We also provide over 150 fundamental indicators and technical indicators such as SMA, RSI, Bollinger Bands, MACD, and more.
+
+### Stock.pi Features
+
+![Landing Page](https://i.ibb.co/ZSdH3h5/Untitled.png)
 
 StockPi offers a comprehensive set of features designed to enhance your stock market analysis and investment experience:
 
 1. User Authentication:
 
-Secure and private access to your stock market analysis tools.
-Your data and details are protected, ensuring that they are not accessible to other users.
+![Sign up Page](https://i.ibb.co/JpRjq23/Sign-Up.png)
 
+> Secure and private access to your stock market analysis tools.
+> Your data and details are protected, ensuring that they are not accessible to other users.
 
-2.User-Friendly Dashboard:
+2. User-Friendly Dashboard:
 
-A user-friendly and intuitive dashboard provides a quick overview of your stock market activities and investments.
-Get a snapshot of your portfolio's performance and important statistics at a glance.
+![Dashboard](https://i.ibb.co/p0SGhZv/Dashboard.png)
 
+> A user-friendly and intuitive dashboard provides a quick overview of your stock market activities and investments.
+> Get a snapshot of your portfolio's performance and important statistics at a glance.
 
-3.Historical Data:
+3. Starred Favorites:
 
-Access a complete history of your stock market activities and past investment decisions.
-Easily review and analyze your previous transactions and strategies, ensuring you don't forget important details.
+![Starred](https://i.ibb.co/hHtQRzQ/SAtarred.png)
 
-4.Starred Favorites:
+> Quickly access and organize essential information by starring or favoriting stocks.
+> Keep track of the stocks and data that matter most to you with ease.
 
-Quickly access and organize essential information by starring or favoriting stocks, news articles, or insights.
-Keep track of the stocks and data that matter most to you with ease.
+4. Advanced Market Sentiment Analysis:
 
+![Sentiment](https://i.ibb.co/qF7NQCw/Sentiment.pnglocal)
 
-5.Advanced Market Sentiment Analysis:
+> Utilize cutting-edge sentiment analysis tools to gauge market sentiment and predict stock market trends.
+> Make data-backed decisions by assessing market sentiment before investing.
 
-Utilize cutting-edge sentiment analysis tools to gauge market sentiment and predict stock market trends.
-Make data-backed decisions by assessing market sentiment before investing.
+5. Top Stocks:
 
+![Stocks](https://i.ibb.co/JcdpD2j/Stocks.png)
 
+> Get a quick overview of the top stocks in the market. Be it top gainers, top losers, or most active stocks, we've got you covered.
 
 ### Contributing
 
-To contribute to the **HackInfinity** project, follow these steps:
+To contribute to the **Stock.pi** project, follow these steps:
 
 1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Push to the original branch: `git push origin <project_name>/<location>`
-5. Create the pull request.
+2. Create a .env file in the root directory and add the following: (You will need to get an API key from [Alpha Vantage](https://www.alphavantage.co/) to use the app)
 
-## Contributors
+    ```bash
+    AV_KEY=<YOUR_API_KEY_FROM_ALPHA_VANTAGE>
+    ```
 
--   [Dv04](https://github.com/Dv04/)
--   [NotTheRightGuy](https://github.com/nottherightguy/)
--   [Namish73](https://github.com/naimish73)
--   [Kumail261103](https://github.com/KUMAIL261103)
--   
+3. Create a branch: `git checkout -b <branch_name>`.
+4. Make your changes and commit them: `git commit -m '<commit_message>'`
+5. Push to the original branch: `git push origin <project_name>/<location>`
+6. Create a pull request.
+
+## Issues
+
+To report issues, bugs, or requests for additional features, please submit an issue on the [Stock.pi](https://github.com/NotTheRightGuy/stock.pi/issues) repository.
 
 ## License
 
